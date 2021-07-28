@@ -21,19 +21,19 @@ function setup() {
 }
 
 function draw() {
-  //testLines()
-  //outlineShape()
-  //simpleLines()
+  testLines()
+  outlineShape()
+  simpleLines()
   //circles()
 
   let picker = random(1)
-  if(picker > 0.3){
-    outlineShape()
-  }
-  if(picker > 0.3){
-    simpleLines()
-  }
-  if(picker > 0.3){
+  // if(picker > 0.3){
+  //   outlineShape()
+  // }
+  // if(picker > 0.3){
+  //   simpleLines()
+  // }
+  if(picker > 0.5){
     circles()
   }
 }
