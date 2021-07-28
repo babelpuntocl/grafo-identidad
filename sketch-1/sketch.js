@@ -22,8 +22,42 @@ function setup() {
 
 function draw() {
   //testLines()
-  outlineShape()
-  simpleLines()
+  //outlineShape()
+  //simpleLines()
+  //circles()
+
+  let picker = random(1)
+  if(picker > 0.3){
+    outlineShape()
+  }
+  if(picker > 0.3){
+    simpleLines()
+  }
+  if(picker > 0.3){
+    circles()
+  }
+}
+
+function outlineShape () {
+  const strokeColor = getRandomFromPalette()
+  const weight = 1 // randomSelectTwo() ? 1 : 3
+  const hexagonTrue = randomSelectTwo()
+
+  stroke(strokeColor)
+  strokeWeight(weight)
+
+  if (hexagonTrue) {
+    push()
+      translate(width/2, height/2)
+      ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)  //rect(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE) //hexagon(0, 0, CRYSTAL_SIZE / 2)
+    pop()
+  } else {
+    push()
+      translate(width/2, height/2)
+      hexagon(0, 0, CRYSTAL_SIZE / 2) //
+    pop()
+  }
+
 }
 
 function simpleLines(){
@@ -51,40 +85,37 @@ function simpleLines(){
   pop()
 }
 
-function outlineShape () {
+function circles(){
+  const numShapes = SIDES
+  const angle = 360/numShapes
+  const shapeSize = (CRYSTAL_SIZE/2)*0.93
+  const position = (CRYSTAL_SIZE/2) - (shapeSize/2)
   const strokeColor = getRandomFromPalette()
-  const weight = 1 // randomSelectTwo() ? 1 : 3
-  const hexagonTrue = randomSelectTwo()
 
   stroke(strokeColor)
-  strokeWeight(weight)
-
-  if (hexagonTrue) {
-    push()
-      translate(width/2, height/2)
-      rect(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE) //hexagon(0, 0, CRYSTAL_SIZE / 2)
-    pop()
-  } else {
-    push()
-      translate(width/2, height/2)
-      ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE) //hexagon(0, 0, CRYSTAL_SIZE / 2)
-    pop()
-  }
-
+  strokeWeight(1)
+  noFill()
+  push()
+  translate(width/2,height/2)
+    for (let i = 0; i <= numShapes; i++) {
+      ellipse(position,0,shapeSize,shapeSize)
+      rotate(angle)
+    }
+  pop()
 }
 
-
+// reticula de verificación
 function testLines () {
   let numShapes = randomSelectTwo() ? SIDES : SIDES * 2
   const strokeColor = getRandomFromPalette()
 
   noFill()
-  stroke(PALETTE[0])
+  stroke(200) //PALETTE[0]
   push()
     translate(width/2, height/2)
     ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
 
-    stroke(strokeColor)
+    stroke(200) //strokeColor
     const angle = 360 / numShapes
     for (let i = 0; i < numShapes; i++) {
       line(0, 0, 0, CRYSTAL_SIZE / 2)
