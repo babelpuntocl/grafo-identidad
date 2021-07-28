@@ -21,21 +21,23 @@ function setup() {
 }
 
 function draw() {
-  testLines()
+  const layer = new Circles()
+  layer.render()
+
+  //testLines()
   outlineShape()
   simpleLines()
-  //circles()
 
-  let picker = random(1)
+  // let picker = random(1)
   // if(picker > 0.3){
   //   outlineShape()
   // }
   // if(picker > 0.3){
   //   simpleLines()
   // }
-  if(picker > 0.5){
-    circles()
-  }
+  // if(picker > 0.5){
+  //   circles()
+  // }
 }
 
 function outlineShape () {
@@ -85,24 +87,6 @@ function simpleLines(){
   pop()
 }
 
-function circles(){
-  const numShapes = SIDES
-  const angle = 360/numShapes
-  const shapeSize = (CRYSTAL_SIZE/2)*0.93
-  const position = (CRYSTAL_SIZE/2) - (shapeSize/2)
-  const strokeColor = getRandomFromPalette()
-
-  stroke(strokeColor)
-  strokeWeight(1)
-  noFill()
-  push()
-  translate(width/2,height/2)
-    for (let i = 0; i <= numShapes; i++) {
-      ellipse(position,0,shapeSize,shapeSize)
-      rotate(angle)
-    }
-  pop()
-}
 
 // reticula de verificación
 function testLines () {
