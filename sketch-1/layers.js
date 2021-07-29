@@ -33,6 +33,25 @@ class Circles extends Layer {
   }
 }
 
+class centerCircles extends Layer {
+  constructor() {
+    super()
+    this.shapeSize = (CRYSTAL_SIZE / 2) * random(1) // * 0.93
+    this.position = (CRYSTAL_SIZE / 2)
+  }
+
+  render() {
+    noFill()
+    stroke(this.strokeColor)
+    strokeWeight(1)
+    push()
+    translate(width/2, height/2)
+      ellipse(0, 0, this.shapeSize, this.shapeSize)
+      rotate(this.angle)
+    pop()
+  }
+}
+
 class SimpleLines extends Layer {
   constructor() {
     super()

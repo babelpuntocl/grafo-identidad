@@ -20,11 +20,12 @@ function draw() {
   const cirlces = new Circles()
   cirlces.render()
 
+  const cirlcess = new centerCircles()
+  cirlcess.render()
+
   const simpleLines = new SimpleLines()
   simpleLines.render()
 
   const outlineShape = new OutlineShape()
   outlineShape.render()
-
-  //testLines()
 }
