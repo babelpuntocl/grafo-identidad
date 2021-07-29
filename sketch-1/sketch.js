@@ -11,17 +11,19 @@ function setup() {
     color(131, 56, 236),
     color(58, 134, 255)
   ]
-  noLoop()
+  //noLoop()
+  frameRate(2)
   angleMode(DEGREES)
   rectMode(CENTER)
 }
 
 function draw() {
-  const cirlces = new Circles()
-  cirlces.render()
+  background(255)
+  const externalCircles = new Circles()
+  externalCircles.render()
 
-  const cirlcess = new centerCircles()
-  cirlcess.render()
+  const centerCircle = new centerCircles()
+  centerCircle.render()
 
   const simpleLines = new SimpleLines()
   simpleLines.render()
