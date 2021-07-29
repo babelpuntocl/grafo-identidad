@@ -5,7 +5,7 @@ class Layer {
     this.angle = 360 / this.numShapes
     this.stepsOut = 8
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
-    this.thinStroke = 1
+    this.thinStroke = 3
     this.thickStroke = 3
     this.strokeColor = getRandomFromPalette()
     this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
@@ -52,7 +52,7 @@ class centerCircles extends Layer {
   }
 }
 
-class SimpleLines extends Layer {
+class simpleLines extends Layer {
   constructor() {
     super()
     this.numSteps = randomSelectTwo() ? this.stepsOut : int(this.stepsOut * 1.25)
