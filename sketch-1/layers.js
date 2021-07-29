@@ -15,13 +15,13 @@ class Layer {
 class externalCircles extends Layer {
   constructor() {
     super()
-    this.shapeSize = (CRYSTAL_SIZE / 2) * random(1) // * 0.93
+    this.shapeSize = (CRYSTAL_SIZE / 2.5) * random(1) // * 0.93
     this.position = (CRYSTAL_SIZE / 2) - (this.shapeSize / 2)
   }
 
   render() {
-    fill(this.strokeColor)
-    noStroke()
+    noFill()
+    stroke(200) //this.strokeColor
     strokeWeight(1)
     push()
     translate(width/2, height/2)
@@ -36,12 +36,12 @@ class externalCircles extends Layer {
 class centerCircles extends Layer {
   constructor() {
     super()
-    this.shapeSize = (CRYSTAL_SIZE / 2) * random(1) // * 0.93
+    this.shapeSize = (CRYSTAL_SIZE / 3) * random(1) // * 0.93
     this.position = (CRYSTAL_SIZE / 2)
   }
 
   render() {
-    fill(this.strokeColor)
+    fill(0) //this.strokeColor
     noStroke()
     strokeWeight(1)
     push()
@@ -93,6 +93,25 @@ class OutlineShape extends Layer {
     } else {
       ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
     }
+    pop()
+  }
+}
+
+class pageRect extends Layer {
+  constructor() {
+    super()
+    this.shapeSizeWidth = (CRYSTAL_SIZE / 2) // * 0.93
+    this.shapeSizeHeight = (CRYSTAL_SIZE / 2) // * 0.93
+    this.position = (CRYSTAL_SIZE / 2)
+  }
+
+  render() {
+    fill(255)
+    noStroke()
+    strokeWeight(1)
+    push()
+    translate(width/2, height/2)
+      rect(0, 77, width, this.shapeSizeHeight)
     pop()
   }
 }
