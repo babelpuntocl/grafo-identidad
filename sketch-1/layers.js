@@ -8,6 +8,7 @@ class Layer {
     this.thinStroke = 1
     this.thickStroke = 3
     this.strokeColor = getRandomFromPalette()
+    this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
   }
 }
 
@@ -39,7 +40,6 @@ class SimpleLines extends Layer {
     this.step = (CRYSTAL_SIZE / 2) / this.numSteps
     this.start = floor(random(0, this.numSteps))
     this.stop = floor(random(this.start, this.numSteps + 1))
-    this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
     this.numShapes = randomSelectTwo() ? this.sides : this.sides * 2
     this.angle = 360 / this.numShapes
   }
@@ -61,7 +61,6 @@ class SimpleLines extends Layer {
 class OutlineShape extends Layer {
   constructor () {
     super()
-    this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
     this.hexagonTrue = randomSelectTwo()
   }
 
