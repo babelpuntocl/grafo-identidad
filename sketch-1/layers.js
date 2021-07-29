@@ -5,8 +5,8 @@ class Layer {
     this.angle = 360 / this.numShapes
     this.stepsOut = 8
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
-    this.thinStroke = 3
-    this.thickStroke = 3
+    this.thinStroke = 1
+    this.thickStroke = 2
     this.strokeColor = getRandomFromPalette()
     this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
   }
@@ -21,12 +21,12 @@ class externalCircles extends Layer {
 
   render() {
     noFill()
-    stroke(200) //this.strokeColor
-    strokeWeight(1)
+    stroke(this.strokeColor)
+    strokeWeight(this.weight)
     push()
     translate(width/2, height/2)
-    for (let i = 0; i <= this.numShapes; i++) {
-      ellipse(this.position, 0, this.shapeSize, this.shapeSize)
+    for (let i = 0; i < this.numShapes; i++) {
+      rect(this.position, 0, this.shapeSize, this.shapeSize)
       rotate(this.angle)
     }
     pop()
@@ -41,7 +41,7 @@ class centerCircles extends Layer {
   }
 
   render() {
-    fill(0) //this.strokeColor
+    fill(this.strokeColor)
     noStroke()
     strokeWeight(1)
     push()
