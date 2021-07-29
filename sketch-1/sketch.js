@@ -11,7 +11,7 @@ function setup() {
     color(131, 56, 236),
     color(58, 134, 255)
   ]
-  //noLoop()
+  noLoop()
   frameRate(2)
   angleMode(DEGREES)
   rectMode(CENTER)
@@ -19,15 +19,15 @@ function setup() {
 
 function draw() {
   background(255)
-  const externalCircles = new Circles()
-  externalCircles.render()
+  const externalcircles = new externalCircles()
+  externalcircles.render()
 
-  const centerCircle = new centerCircles()
-  centerCircle.render()
+  const centercircle = new centerCircles()
+  centercircle.render()
 
-  const simpleLines = new SimpleLines()
-  simpleLines.render()
+  const simplelines = new SimpleLines()
+  simplelines.render()
 
-  const outlineShape = new OutlineShape()
-  outlineShape.render()
+  // const outlineshape = new OutlineShape()
+  // outlineshape.render()
 }

@@ -12,7 +12,7 @@ class Layer {
   }
 }
 
-class Circles extends Layer {
+class externalCircles extends Layer {
   constructor() {
     super()
     this.shapeSize = (CRYSTAL_SIZE / 2) * random(1) // * 0.93
@@ -20,8 +20,8 @@ class Circles extends Layer {
   }
 
   render() {
-    noFill()
-    stroke(this.strokeColor)
+    fill(this.strokeColor)
+    noStroke()
     strokeWeight(1)
     push()
     translate(width/2, height/2)
@@ -41,8 +41,8 @@ class centerCircles extends Layer {
   }
 
   render() {
-    noFill()
-    stroke(this.strokeColor)
+    fill(this.strokeColor)
+    noStroke()
     strokeWeight(1)
     push()
     translate(width/2, height/2)
