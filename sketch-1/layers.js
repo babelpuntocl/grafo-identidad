@@ -77,22 +77,24 @@ class simpleLines extends Layer {
   }
 }
 
-class OutlineShape extends Layer {
+class outlineShape extends Layer {
   constructor () {
     super()
     this.hexagonTrue = randomSelectTwo()
   }
 
   render () {
+    noFill()
     stroke(this.strokeColor)
     strokeWeight(this.weight)
     push()
     translate(width/2, height/2)
-    if (this.hexagonTrue) {
-      hexagon(0, 0, CRYSTAL_SIZE / 2)
-    } else {
-      ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
-    }
+    // if (this.hexagonTrue) {
+    //   hexagon(0, 0, CRYSTAL_SIZE / 2)
+    // } else {
+    //   ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
+    // }
+      ellipse(0, 0, CRYSTAL_SIZE+30, CRYSTAL_SIZE+30)
     pop()
   }
 }

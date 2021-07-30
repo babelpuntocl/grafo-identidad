@@ -24,6 +24,10 @@ function draw() {
 
   picker = random(1)
   if (picker > 0.15) {
+    layers.push(new outlineShape())
+  }
+  picker = random(1)
+  if (picker > 0.15) {
     layers.push(new simpleLines()) // añade el valor al array layers
   }
   picker = random(1)
@@ -34,10 +38,6 @@ function draw() {
   if (picker > 0.15) {
     layers.push(new centerCircles())
   }
-  // picker = random(1)
-  // if (picker > 0) {
-  //   layers.push(new pageRect())
-  // }
 
   layers.forEach(layer => {
     layer.render()
